@@ -7,88 +7,75 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div>
-      {/* Main Navbar */}
-
-      <div className="flex justify-between px-10">
-        {/* Side Nav */}
-        <div className="drawer md:hidden">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
-            {/* Page content here */}
+    <div className="drawer h-16 px-4 lg:px-20 xl:px-40 py-12">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        {/* Navbar */}
+        <div className="w-full navbar bg-white flex justify-between">
+          <div className="flex md:hidden">
             <label
-              htmlFor="my-drawer"
-              className="btn  drawer-button bg-transparent shadow-none btn-square border-none"
+              htmlFor="my-drawer-3"
+              aria-label="open sidebar"
+              className="btn btn-square btn-ghost"
             >
-              <IoIosMenu className="text-2xl" />
+              <IoIosMenu className="text-3xl" />
             </label>
           </div>
-          <div className="sideNav drawer-side">
-            <label
-              htmlFor="my-drawer"
-              aria-label="close sidebar"
-              className="drawer-overlay"
-            ></label>
-            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-              {/* Sidebar content here */}
-              <li>
-                <Link href="/">Women</Link>
-              </li>
-              <li>
-                <Link href="/">Men</Link>
-              </li>
-              <li>
-                <Link href="/">All Vintage</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="hidden md:block">
-          <ul className="flex gap-6 font-semibold">
-            <li className="flex items-center">
-              <Link href="/">Women</Link>
-            </li>
-            <li>
-              <Link href="/">Men</Link>
-            </li>
-            <li>
-              <Link href="/">All Vintage</Link>
-            </li>
+
+          <ul className="space-x-8 font-semibold text-lg hidden md:block">
+            <Link href="/">Women</Link>
+            <Link href="/">Men</Link>
+            <Link href="/">All Vintage</Link>
           </ul>
-        </div>
-        <Image
-          src="/boas_logo.svg"
-          alt="Company Logo"
-          width={100}
-          height={100}
-          className="absolute top-0 left-1/2"
-        />
-        <div>
-          <ul className="flex space-x-4">
-            <li className="items-center hidden md:flex font-semibold">
-              <Link href="/">About Us</Link>
-            </li>
-            <li className="text-center text-xs">
-              <Link href="/">
+
+          <div className="flex px-2">
+            <Image src="/boas_logo.svg" height={80} width={80} alt=""></Image>
+          </div>
+          <div>
+            <ul className="flex space-x-4">
+              <Link
+                className="items-center hidden md:flex font-semibold"
+                href="/"
+              >
+                About Us
+              </Link>
+
+              <Link className="text-center text-xs" href="/">
                 <TbMoneybag className="text-xl mx-auto" />
                 Invest
               </Link>
-            </li>
-            <li className="text-center text-xs">
-              <Link href="/">
-                {" "}
+
+              <Link className="text-center text-xs" href="/">
                 <RiAccountCircleLine className="text-xl mx-auto" />
                 Account
               </Link>
-            </li>
-            <li className="text-center text-xs">
-              <Link href="/">
+
+              <Link className="text-center text-xs" href="/">
                 <FiShoppingCart className="text-xl mx-auto" />
                 Cart
               </Link>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div className="drawer-side">
+        <label
+          htmlFor="my-drawer-3"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+
+        <ul className="menu p-4 w-80 min-h-full bg-base-200 font-medium z-50 text-lg text-pretty space-y-2">
+          {/* Sidebar content here */}
+
+          <Link className="hover:bg-gray-400 p-2 rounded-lg" href="/">Women</Link>
+
+          <Link className="hover:bg-gray-400 p-2 rounded-lg" href="/">Men</Link>
+
+          <Link className="hover:bg-gray-400 p-2 rounded-lg" href="/">All Vintage</Link>
+
+          <Link className="hover:bg-gray-400 p-2 rounded-lg" href="/">About Us</Link>
+        </ul>
       </div>
     </div>
   );
