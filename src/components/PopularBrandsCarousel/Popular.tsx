@@ -1,22 +1,33 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { popularBrands } from "@/constant";
 import Image from "next/image";
-import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
+import CustomButtons from "@/components/Customs/CustomButtons";
 
 const PopularBrands = () => {
   return (
-    <div className="mt-20 flex items-center justify-center bg-cover bg-center">
-      <div className="flex flex-col gap-20 max-w-[80%] text-center items-center">
+    <div className="py-8 mt-20 flex flex-col items-center justify-center bg-gray-100">
+      <div className=" max-w-[80%] items-center">
+        <p className="text-start my-4 font-medium text-3xl text-gray-800">
+          Popular Brands
+        </p>
         <Swiper
           slidesPerView={1}
           spaceBetween={0}
-          loop={true}
-          navigation={true}
+          loop={false}
+          pagination={{
+            type: "progressbar",
+          }}
           speed={500}
           breakpoints={{
+            // when window width is >= 390px
+            390: {
+              slidesPerView: 2,
+              spaceBetween: 4,
+            },
             // when window width is >= 640px
             640: {
               slidesPerView: 3,
@@ -28,29 +39,30 @@ const PopularBrands = () => {
               spaceBetween: 30,
             },
           }}
-          modules={[Navigation]}
+          modules={[Pagination]}
           className="max-w-[100%] "
         >
           {popularBrands.map((brands, index) => (
             <SwiperSlide key={index}>
-              <div className="relative">
+              <div className="relative my-2 md:my-6">
                 <Image
                   src={brands.cover}
-                  alt=""
-                  height={200}
+                  alt="Cover Image"
+                  height={300}
                   width={200}
                   className="z-10 h-[350px] w-[300px]"
                 />
                 <Image
                   src={brands.logo}
-                  alt=""
+                  alt="Brand Logo"
                   height={80}
                   width={80}
-                  className="absolute inset-0 flex items-center my-auto mx-auto"
+                  className="absolute inset-0 m-auto"
                 />
               </div>
             </SwiperSlide>
           ))}
+          <CustomButtons />
         </Swiper>
       </div>
     </div>

@@ -145,3 +145,31 @@ export const popularBrands = [
     logo: "/popular/armani.png",
   },
 ];
+
+export const steps = [
+  {
+    h1: "Step 1",
+    h2: "Find the Perfect Pair",
+    desc: "Browse our selection of vintage items",
+  },
+  {
+    h1: "Step 2",
+    h2: "Check the price and countdown",
+    desc: "Our prices drop every couple off hours. Keep an eye out to get the best deals",
+  },
+  {
+    h1: "Step 3",
+    h2: "Buy now or wait",
+    desc: "Like the price? Grab it before someone else does. Or take your chances and wait for the price to drop",
+  },
+  {
+    h1: "Step 4",
+    h2: "Set a reminder",
+    desc: "Decided to wait? We recommend that you to turn on notifications for when the price drops",
+  },
+  {
+    h1: "Step 5",
+    h2: "Rock 'em if you've got 'em",
+    desc: "We would love you see you wearing your boas! Tag us and get featured here! @boas.good ",
+  },
+];

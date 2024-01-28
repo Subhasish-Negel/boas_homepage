@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
-const withMT = require("@material-tailwind/react/utils/withMT");
 
-const config: Config = withMT({
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,17 +8,17 @@ const config: Config = withMT({
   ],
   theme: {
     screens: {
-      'xs': '420px',
+      xs: "420px",
 
-      'sm': '640px',
+      sm: "640px",
 
-      'md': '768px',
+      md: "768px",
 
-      'lg': '1024px',
+      lg: "1024px",
 
-      'xl': '1280px',
+      xl: "1280px",
 
-      '2xl': '1536px',
+      "2xl": "1536px",
     },
 
     extend: {
@@ -28,6 +27,7 @@ const config: Config = withMT({
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "banner-bg": "url('/assets/banner-bg.jpg')",
+        "friday-banner": "url('/assets/friday-banner.png')",
       },
     },
   },
@@ -42,5 +42,5 @@ const config: Config = withMT({
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
     themeRoot: ":root", // The element that receives theme color CSS variables
   },
-});
+};
 export default config;
